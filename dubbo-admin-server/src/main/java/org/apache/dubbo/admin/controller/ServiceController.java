@@ -87,7 +87,7 @@ public class ServiceController {
         List<Consumer> consumers = consumerService.findByService(service);
 
         String application = null;
-        if (providers != null && providers.size() > 0) {
+        if (providers != null && !providers.isEmpty()) {
             application = providers.get(0).getApplication();
         }
         MetadataIdentifier identifier = new MetadataIdentifier(interfaze, version, group, Constants.PROVIDER_SIDE, application);

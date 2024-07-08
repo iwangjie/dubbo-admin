@@ -90,6 +90,7 @@ public class InstanceRegistryQueryHelper {
                 }));
         return urlsToProviderList(providerUrls).stream()
                 .filter(provider -> provider.getService().equals(serviceName))
+                .distinct()
                 .collect(Collectors.toList());
     }
 
