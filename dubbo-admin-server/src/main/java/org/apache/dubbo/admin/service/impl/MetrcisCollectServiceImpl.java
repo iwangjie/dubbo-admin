@@ -41,4 +41,11 @@ public class MetrcisCollectServiceImpl {
         MetricsService metricsService = referenceConfig.get();
         return metricsService.getMetricsByGroup(group);
     }
+
+    public void destroy() {
+        if (referenceConfig != null) {
+            referenceConfig.destroy();
+            referenceConfig = null; // Help GC
+        }
+    }
 }
